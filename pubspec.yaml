@@ -1,6 +1,7 @@
 name: animated_visibility
 description: A package to easily animate visibility of an element in multichild widgets like rows, columns, listviews and more.
-version: 0.0.1
+version: 1.0.0
+repository: https://github.com/mtahabasiri/animated_visibility.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
