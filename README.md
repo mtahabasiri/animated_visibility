@@ -18,7 +18,7 @@ flutter pub add animated_visibility
 ### This will add a line like this to your package's pubspec.yaml (and run an implicit flutter pub get):
 ```
 dependencies:
-  simple_animations: ^4.0.0
+  animated_visibility: ^1.0.0
 ```
 
 
