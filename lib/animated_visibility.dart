@@ -2,25 +2,17 @@ library animated_visibility;
 
 import 'package:flutter/material.dart';
 
-enum FadeMode {
-  vertical,
-  horizontal,
-  both,
-}
-
 class AnimatedVisibility extends StatefulWidget {
   final bool isVisible;
   final Duration duration;
   final Widget child;
   final Curve curve;
-  final FadeMode fadeMode;
 
   const AnimatedVisibility({
     Key? key,
     required this.isVisible,
     required this.duration,
     required this.child,
-    this.fadeMode = FadeMode.both,
     this.curve = Curves.easeIn,
   }) : super(key: key);
 
@@ -69,20 +61,14 @@ class _AnimatedVisibilityState extends State<AnimatedVisibility>
     super.dispose();
   }
 
-  bool get _isVertical =>
-      widget.fadeMode == FadeMode.vertical || widget.fadeMode == FadeMode.both;
-  bool get _isHorizontal =>
-      widget.fadeMode == FadeMode.horizontal ||
-      widget.fadeMode == FadeMode.both;
-
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _animation,
       child: widget.child,
       builder: (context, child) => Align(
-        heightFactor: _isVertical ? null : _animation.value,
-        widthFactor: _isHorizontal ? null : _animation.value,
+        heightFactor: _animation.value,
+        widthFactor: _animation.value,
         child: Opacity(opacity: _animation.value, child: child),
       ),
     );
