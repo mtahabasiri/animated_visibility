@@ -6,6 +6,7 @@
 A package to easily animate visibility of an element in multichild widgets like rows, columns, listviews and more.
 
 ![image info](./example/demo.gif)
+![image info](./example/demo2.gif)
 
 ## Getting started
 
