@@ -81,8 +81,8 @@ class _AnimatedVisibilityState extends State<AnimatedVisibility>
       animation: _animation,
       child: widget.child,
       builder: (context, child) => Align(
-        heightFactor: _isVertical ? _animation.value : null,
-        widthFactor: _isHorizontal ? _animation.value : null,
+        heightFactor: _isVertical ? null : _animation.value,
+        widthFactor: _isHorizontal ? null : _animation.value,
         child: Opacity(opacity: _animation.value, child: child),
       ),
     );
