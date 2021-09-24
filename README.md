@@ -30,7 +30,6 @@ dependencies:
             isVisible: _isVisible, //whether widget should be visible or hidden
             duration: const Duration(milliseconds: 400), //duration of transition animation
             curve: Curves.easeIn, //cure of animation. default is easeIn
-            fadeMode: FadeMode.horizontal, //direction of animation
             child: Container(
               height: 70,
               width: double.infinity,
