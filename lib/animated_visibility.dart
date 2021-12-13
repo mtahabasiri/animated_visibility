@@ -29,7 +29,7 @@ class _AnimatedVisibilityState extends State<AnimatedVisibility>
   void initState() {
     super.initState();
     _setupAnimation();
-    _runSizeCheck();
+    _runSizeCheck(true);
   }
 
   void _setupAnimation() {
@@ -43,13 +43,17 @@ class _AnimatedVisibilityState extends State<AnimatedVisibility>
 
   @override
   void didUpdateWidget(covariant AnimatedVisibility oldWidget) {
-    _runSizeCheck();
+    _runSizeCheck(false);
     super.didUpdateWidget(oldWidget);
   }
 
-  void _runSizeCheck() {
+  void _runSizeCheck(bool isInit) {
     if (widget.isVisible) {
-      _sizeController.forward();
+      if (isInit) {
+        _sizeController.value = 1;
+      } else {
+        _sizeController.forward();
+      }
     } else {
       _sizeController.reverse();
     }
